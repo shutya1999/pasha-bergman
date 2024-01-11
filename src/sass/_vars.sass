@@ -1,0 +1,21 @@
+$breakpoints: (mob: 320, s-tablet: 768, l-tablet: 1024, s-laptop: 1280, l-laptop: 1440, desktop: 1920, xxl: 2560)
+
+@function adaptiv-val($startSize, $minSize, $breakpoint)
+  $breakpoint-keys: map-keys($breakpoints)
+  $breakpoint-values: map-values($breakpoints)
+  $breakpoint-index: index($breakpoint-keys, $breakpoint)
+
+  $minScreen: nth($breakpoint-values, $breakpoint-index)
+  $next-breakpoint-index: $breakpoint-index + 1
+  $maxScreen: nth($breakpoint-values, $next-breakpoint-index)
+
+  @return calc(#{$minSize}px + (#{$startSize} - #{$minSize}) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})))
+
+
+@mixin bg-center
+  background-position: center
+  background-repeat: no-repeat
+  @content
+
+@mixin vh
+  height: calc(var(--vh, 1vh) * 100)

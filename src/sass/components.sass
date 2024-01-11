@@ -1,0 +1,590 @@
+@import "vars"
+
+*
+  box-sizing: border-box
+  &::before, &::after
+    box-sizing: border-box
+
+.main
+  overflow: hidden
+  // margin-top: var(--header-height)
+
+\:root
+  --header-height: 130px
+
+
+picture
+  display: flex
+  align-items: center
+  justify-content: center
+
+ul[class], ol[class]
+  padding: 0
+
+body, h1, h2, h3, h4, h5, h6, p, li, figure, figcaption, blockquote, dl, dd
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: inherit
+
+
+
+html
+  line-height: normal
+  text-rendering: optimizeSpeed
+  font-style: normal
+  &.lock
+    & body
+      overflow: hidden
+
+body
+  font-family: 'NeutralFace', sans-serif
+  scroll-behavior: smooth
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 22px
+  color: black
+  background-color: #E5E5E5
+
+
+ul[class], ol[class]
+  list-style: none
+
+ul, ol
+  list-style: none
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+  //color: $dark-blue
+
+img
+  max-width: 100%
+  display: block
+
+
+article > * + *
+  margin-top: 1em
+
+input, button, textarea, select
+  font: inherit
+
+
+.container
+  padding: 0 35px
+
+.header
+  padding: 41px 0 41px 25px
+  & .container
+    display: flex
+    align-items: center
+    justify-content: flex-start
+  & .header-logo
+    display: flex
+    align-items: center
+    flex: 2
+    gap: 0 10px
+  & .header-contacts
+    color: black
+    font-size: 16px
+    letter-spacing: -0.16px
+    line-height: 24px
+    text-align: end
+    margin-right: 200px
+    & a
+      color: inherit
+      display: block
+      transition: all .3s
+      &:hover
+        color: #FF3F3F
+  & .header-info
+    color: #959595
+    font-size: 16px
+    letter-spacing: -0.16px
+    line-height: 24px
+    text-align: end
+
+.main
+  display: grid
+  grid-template-columns: 7fr 5fr
+  min-height: calc(calc(var(--vh, 1vh) * 100) - var(--header-height, 130px))
+  & .main-left
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    & .main-left__top
+      padding-left: 60px
+      margin-right: -5vw
+      & .slogan
+        color: #000
+        font-size: adaptiv-val(146, 110, l-laptop)
+        font-weight: 400
+        line-height: 90%
+        letter-spacing: -4.38px
+        text-transform: uppercase
+        perspective: 1000px
+        filter: blur(20px)
+        animation: blur-out 1.8s cubic-bezier(.4,.4,.1,1) forwards 1.6s
+        position: relative
+        & .slogan-row
+          transform: translateY(120%) rotateX(-60deg)
+          animation: anim-test 1.8s cubic-bezier(.4,.4,.1,1) forwards 1.6s
+        & .slogan-word
+          display: inline-block
+        & .slogan-img
+          display: inline-block
+          animation: anim-rotate-right infinite 15s linear
+          & img
+            width: 118px
+            height: 118px
+
+      & .technology
+        position: absolute
+        bottom: 0
+        //right: 225px
+        right: 20%
+        display: flex
+        align-items: center
+        gap: 0 40px
+        & .technology-text
+          color: #959595
+          font-size: 16px
+          font-weight: 400
+          line-height: 100%
+          letter-spacing: -0.16px
+          text-transform: uppercase
+          padding: 10px
+        & .technology-items
+          display: flex
+          align-items: center
+          gap: 0 25px
+          & .technology-item
+            display: flex
+            align-items: center
+            font-size: 16px
+            font-weight: 400
+            line-height: 88%
+            letter-spacing: -0.16px
+            text-transform: uppercase
+            & svg
+              width: 65px
+              height: auto
+              animation: anim-rotate-left 8s linear infinite
+
+    & .main-left__bottom
+      min-height: 232px
+      background-color: #0F0F0F
+      padding: 50px 180px 0 56px
+      & .bottom-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+        opacity: 0
+        animation: fadeIn 1s forwards ease-out 1.5s
+      & .img
+        width: 100%
+        max-width: 250px
+        & img
+          width: 100%
+      & .button
+        position: relative
+        overflow: hidden
+        min-height: 87px
+        width: 100%
+        max-width: 254px
+        display: flex
+        align-items: center
+        justify-content: center
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='254' height='87' viewBox='0 0 254 87' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5 4L4.5 4L4.5 22' stroke='%23E5E5E5' stroke-width='2'/%3E%3Cpath d='M22.5 82.5L4.5 82.5L4.5 64.5' stroke='%23E5E5E5' stroke-width='2'/%3E%3Cpath d='M232 4L250 4L250 22' stroke='%23E5E5E5' stroke-width='2'/%3E%3Cpath d='M232 82.5L250 82.5L250 64.5' stroke='%23E5E5E5' stroke-width='2'/%3E%3C/svg%3E")
+        & .button-wrapper
+          position: relative
+          overflow: hidden
+        & span
+          display: block
+          color: rgba(229, 229, 229, 1)
+          -webkit-transition: -webkit-transform .45s cubic-bezier(.19,1,.22,1)
+          transition: -webkit-transform .45s cubic-bezier(.19,1,.22,1)
+          transition: transform .45s cubic-bezier(.19,1,.22,1)
+          transition: transform .45s cubic-bezier(.19,1,.22,1),-webkit-transform .45s cubic-bezier(.19,1,.22,1)
+          &:last-child
+            position: absolute
+            left: 0
+            top: 0
+            text-align: center
+            -webkit-transform: translate3d(0,100%,0)
+            transform: translate3d(0,100%,0)
+
+        &:hover
+          & span
+            transform: translate3d(0,-100%,0)
+            &:last-child
+              transform: none
+
+
+  & .main-right
+    display: flex
+    align-items: flex-end
+    position: relative
+    & .img
+      width: 100%
+      padding-left: 68px
+      position: relative
+      z-index: 2
+      transform: translateY(-100%)
+      opacity: 0
+      animation: people-show 2s forwards 1.4s
+      & picture
+        width: 100%
+        height: 100%
+      & img
+        max-height: calc(calc(var(--vh, 1vh) * 100) - var(--header-height, 130px) - 50px)
+        width: 100%
+        height: 100%
+        object-fit: contain
+    & .bg
+      position: absolute
+      z-index: 1
+      top: 4.5vh
+      left: 0
+      width: 61.2vw
+      animation: anim-rotate-right 60s linear infinite
+
+
+.intro-overlay
+  // display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: black
+  z-index: 4
+  animation: anim-intro-close 1s 1.5s forwards cubic-bezier(0, 0, 0.2, 1)
+.intro
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 5
+  animation: fadeOut forwards 3s 50ms ease-in
+  & .intro-top
+    padding: 46px 0 41px 25px
+    display: flex
+    align-items: center
+    gap: 0 10px
+    & .intro-logo__img
+      opacity: 0!important
+    & .intro-logo__text
+      transform-origin: left top
+      transform: scale(9) translate(10%, 30%)
+      animation-name: anim-intro-logo-close
+      animation-duration: 1000ms
+      animation-timing-function: cubic-bezier(0, 0, 0, 1)
+      animation-fill-mode: forwards
+      animation-delay: 1.4s
+      & svg
+        & path
+          transform: translateY(100%)
+          animation-name: anim-intro-logo-path
+          animation-duration: 500ms
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
+          animation-delay: 500ms
+          animation-fill-mode: forwards
+          &:nth-child(1)
+            animation-delay: 700ms
+  //& .intro-logo
+    //& svg
+      //width: 400px
+      // height: auto
+
+
+@keyframes anim-rotate-right
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@keyframes anim-rotate-left
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(-360deg)
+
+@keyframes blur-out
+  from
+    filter: blur(20px)
+  to
+    filter: blur(0px)
+
+@keyframes anim-test
+  from
+    transform: translateY(120%) rotateX(-60deg)
+  to
+    transform: translateY(0) rotateX(0deg)
+
+@keyframes anim-slogan-world
+  0%
+    transform: translate(-100%, 100%)
+  25%
+    transform: translate(-100%, 0px)
+  // 75%
+    transform: translate(-100px, 0px)
+  100%
+    transform: translate(0px, 0px)
+
+
+@keyframes anim-intro-close
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(-100%)
+
+
+@keyframes anim-intro-logo-path
+  from
+    transform: translateY(100%)
+  to
+    transform: translateY(0px)
+
+@keyframes anim-intro-logo-close
+  from
+    transform: scale(9) translate(10%, 30%)
+  to
+    transform: scale(1) translate(0px, 0px)
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+    pointer-events: none
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes people-show
+  0%
+    transform: translateY(30%)
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    transform: translateY(0px)
+    opacity: 1
+
+
+@media (max-width: 1440px)
+  .main
+    & .main-left
+      & .main-left__top
+        & .slogan
+          font-size: adaptiv-val(110, 100, s-laptop)
+          & .slogan-img
+            & img
+              width: 90px
+              height: 90px
+
+
+@media (max-width: 1280px)
+  .container
+    padding: 0 20px
+
+  .header
+    padding-left: 0
+
+
+  .main
+    & .main-left
+      & .main-left__top
+        padding-left: 30px
+        & .technology
+          position: static
+          margin-top: 30px
+
+      & .main-left__bottom
+        display: flex
+        align-items: center
+        padding: 0 116px 0 30px
+        & .bottom-wrapper
+          width: 100%
+        & .img
+          max-width: 226px
+
+
+@media (max-width: 1024px)
+  .header
+    & .container
+      justify-content: space-between
+    & .header-logo
+      flex: 0
+    & .header-contacts
+      margin-right: 0
+
+  .main
+    display: flex
+    flex: 99
+    & .main-right
+      position: fixed
+      right: 0
+      bottom: 0
+      max-width: 65.04%
+      & .img
+        padding: 0
+      & .bg
+        width: 1074px
+        right: auto
+        left: -50px
+        top: 0
+    & .main-left
+      width: 100%
+      & .main-left__top
+        margin-right: 0
+        & .slogan
+          font-size: adaptiv-val(120, 100, s-tablet)
+        & .technology
+          flex-direction: column
+          align-items: flex-start
+          padding-left: 90px
+          margin-top: 75px
+          & .technology-items
+            flex-direction: column
+            align-items: flex-start
+      & .main-left__bottom
+        position: relative
+        z-index: 2
+        max-width: 73.731%
+
+
+@media (max-width: 768px)
+  .container
+    padding: 0 16px
+  .header
+    padding: 20px 0
+    & .container
+      display: grid
+      grid-template-columns: repeat(2, auto)
+      gap: 40px 10px
+
+    & .header-logo
+      gap: 0 8px
+      & .logo-img
+        & svg
+          width: 23px
+          height: auto
+      & .logo-text
+        & svg
+          width: 30px
+          height: auto
+
+    & .header-contacts
+      font-size: 10px
+      line-height: 115%
+    & .header-info
+      font-size: 10px
+      line-height: 100%
+      grid-column: 1/3
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      gap: 0 54px
+
+
+  .main
+    & .main-left
+      & .main-left__top
+        padding-left: 16px
+        padding-right: 16px
+        & .slogan
+          font-size: adaptiv-val(95, 40, mob)
+          line-height: 105%
+          & .slogan-img
+            & img
+              width: 44px
+              height: 44px
+
+        & .technology
+          margin-top: 25px
+          padding: 0
+          & .technology-text
+            font-size: 10px
+            line-height: 100%
+            padding: 6px 0
+            margin-bottom: 8px
+          & .technology-items
+            & .technology-item
+              font-size: 10px
+              & svg
+                width: 44px
+                height: auto
+      & .main-left__bottom
+        padding: 0 35px 0 16px
+        min-height: 120px
+        position: relative
+        max-width: 82%
+        & .button
+          max-width: 166px
+          min-height: 56px
+          font-size: 10px
+        & .img
+          width: 36px
+    & .main-right
+      max-width: 95.2%
+      right: -87px
+      bottom: -24px
+      & .bg
+        max-width: 120vw
+        left: 0
+
+
+
+  .intro
+    & .intro-top
+      padding: 20px 0
+      gap: 0 8px
+      & .intro-logo__img
+        & svg
+          width: 23px
+          height: auto
+      & .intro-logo__text
+        transform: scale(5) translate(5%,70%)
+        & svg
+          width: 30px
+          height: auto
+
+
+  @keyframes anim-intro-logo-close
+    from
+      transform: scale(5) translate(5%,70%)
+    to
+      transform: scale(1) translate(0px, 0px)
+
+
+
+
+
+@media (min-width: 1920px)
+  .main
+    & .main-left
+      & .main-left__top
+        & .slogan
+          font-size: adaptiv-val(200, 146, desktop)
+
+@media (min-width: 2560px)
+  .main
+    & .main-left
+      & .main-left__top
+        & .slogan
+          font-size: 200px
+
+
+
