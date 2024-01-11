@@ -47,6 +47,7 @@ body
   line-height: 22px
   color: black
   background-color: #E5E5E5
+  // overflow: hidden
 
 
 ul[class], ol[class]
@@ -75,6 +76,7 @@ input, button, textarea, select
 
 .container
   padding: 0 35px
+
 
 .header
   padding: 41px 0 41px 25px
@@ -122,7 +124,7 @@ input, button, textarea, select
         color: #000
         font-size: adaptiv-val(146, 110, l-laptop)
         font-weight: 400
-        line-height: 90%
+        line-height: 100%
         letter-spacing: -4.38px
         text-transform: uppercase
         perspective: 1000px
@@ -172,10 +174,14 @@ input, button, textarea, select
             & svg
               width: 65px
               height: auto
-              animation: anim-rotate-left 8s linear infinite
+            @media (hover: hover)
+              &:hover
+                & svg
+                  // animation: anim-rotate-left 6s linear
+
 
     & .main-left__bottom
-      min-height: 232px
+      min-height: 222px
       background-color: #0F0F0F
       padding: 50px 180px 0 56px
       & .bottom-wrapper
@@ -236,7 +242,7 @@ input, button, textarea, select
       padding-left: 68px
       position: relative
       z-index: 2
-      transform: translateY(-100%)
+      transform: translateX(-30%)
       opacity: 0
       animation: people-show 2s forwards 1.4s
       & picture
@@ -253,7 +259,10 @@ input, button, textarea, select
       top: 4.5vh
       left: 0
       width: 61.2vw
-      animation: anim-rotate-right 60s linear infinite
+      transform: translateX(20%) rotate(0deg)
+      opacity: 0
+      animation: people-bg-show 2s forwards 1.4s
+      //animation: anim-rotate-right 60s linear infinite
 
 
 .intro-overlay
@@ -374,12 +383,23 @@ input, button, textarea, select
 
 @keyframes people-show
   0%
-    transform: translateY(30%)
+    transform: translateX(30%)
     opacity: 0
   50%
     opacity: 1
   100%
-    transform: translateY(0px)
+    transform: translateX(0px)
+    opacity: 1
+
+@keyframes people-bg-show
+  0%
+    transform: translateX(20%) rotate(0deg)
+    opacity: 0
+  50%
+    opacity: 1
+    // transform: translateX(30%) rotate(-90deg)
+  100%
+    transform: translateX(0px) rotate(-30deg)
     opacity: 1
 
 
@@ -487,18 +507,23 @@ input, button, textarea, select
           height: auto
 
     & .header-contacts
+      grid-column: 1/3
+      grid-row: 2/3
       font-size: 10px
       line-height: 115%
-    & .header-info
-      font-size: 10px
-      line-height: 100%
-      grid-column: 1/3
       display: flex
       align-items: center
       justify-content: flex-end
       gap: 0 54px
+    & .header-info
+      font-size: 10px
+      line-height: 115%
+      grid-row: 1/2
+      grid-column: 2/3
 
 
+  body
+    overflow: hidden
   .main
     & .main-left
       & .main-left__top
