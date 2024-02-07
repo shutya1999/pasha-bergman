@@ -203,7 +203,11 @@ input, button, textarea, select
         max-width: 254px
         display: flex
         align-items: center
+        cursor: pointer
         justify-content: center
+        background: none
+        border: none
+        outline: none
         background-size: contain
         background-repeat: no-repeat
         background-position: center
@@ -403,6 +407,76 @@ input, button, textarea, select
     opacity: 1
 
 
+
+
+.overlay-modal
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 4
+  opacity: 0
+  background-color: rgba(31,31,31,.4)
+  transition: opacity .5s
+  &.active
+    display: block
+  &.fade-in
+    opacity: 1
+  &.fade-out
+    opacity: 0
+
+
+.modal
+  display: none
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  z-index: 5
+  transition: opacity .5s
+  align-items: center
+  opacity: 0
+  &.active
+    display: block
+  &.fade-in
+    opacity: 1
+  &.fade-out
+    opacity: 0
+
+  & .modal-container
+    width: 100%
+    height: 100%
+    position: relative
+  & .modal-close
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 32px
+    height: 32px
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5 6.41455L6.5 18.4146' stroke='%230F2846' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.5 6.41455L18.5 18.4146' stroke='%230F2846' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    @include bg-center
+      background-size: contain
+
+  &.modal-meeting
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 95%
+    max-height: 760px
+    max-width: 1200px
+    & .modal-close
+      display: none
+    & .modal-container
+      & iframe
+        width: 100%
+        height: 100%
+        border: none
+
+
+
 @media (max-width: 1440px)
   .main
     & .main-left
@@ -597,6 +671,22 @@ input, button, textarea, select
       transform: scale(5) translate(5%,70%)
     to
       transform: scale(1) translate(0px, 0px)
+
+
+  .modal
+    align-items: flex-end
+    & .modal-close
+      width: 24px
+      height: 24px
+
+    &.modal-meeting
+      transform: none
+      top: auto
+      left: 0
+      bottom: 0
+      height: 90%
+      & .modal-close
+        display: block
 
 
 

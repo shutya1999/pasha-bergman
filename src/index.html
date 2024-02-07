@@ -85,14 +85,17 @@
                     <div class="technology-items">
                         <div class="technology-item">
                             <svg width="67" height="68" viewBox="0 0 67 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M45.169 45.7229C38.6946 52.1973 28.1975 52.1973 21.7231 45.7229M45.169 45.7229C51.6434 39.2484 51.6434 28.7513 45.169 22.2769M45.169 45.7229L21.7231 22.2769M21.7231 45.7229C15.2487 39.2484 15.2487 28.7513 21.7231 22.2769M21.7231 45.7229C25.0152 49.0149 32.9325 46.4351 39.4069 39.9607C45.8813 33.4863 48.4611 25.569 45.169 22.2769M21.7231 45.7229C18.431 42.4308 21.0108 34.5135 27.4852 28.0391C33.9596 21.5646 41.8769 18.9848 45.169 22.2769M21.7231 22.2769C28.1975 15.8025 38.6946 15.8025 45.169 22.2769" stroke="black"/>
+                                <path d="M45.169 45.7229C38.6946 52.1973 28.1975 52.1973 21.7231 45.7229M45.169 45.7229C51.6434 39.2484 51.6434 28.7513 45.169 22.2769M45.169 45.7229L21.7231 22.2769M21.7231 45.7229C15.2487 39.2484 15.2487 28.7513 21.7231 22.2769M21.7231 45.7229C25.0152 49.0149 32.9325 46.4351 39.4069 39.9607C45.8813 33.4863 48.4611 25.569 45.169 22.2769M21.7231 45.7229C18.431 42.4308 21.0108 34.5135 27.4852 28.0391C33.9596 21.5646 41.8769 18.9848 45.169 22.2769M21.7231 22.2769C28.1975 15.8025 38.6946 15.8025 45.169 22.2769"
+                                      stroke="black"/>
                             </svg>
                             <p>Web 3</p>
                         </div>
                         <div class="technology-item">
                             <svg width="81" height="68" viewBox="0 0 81 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M35.0356 28.8341C43.3755 20.4941 52.4493 16.0462 55.3024 18.8993C58.1556 21.7525 53.7076 30.8262 45.3677 39.1662C37.0278 47.5061 27.954 51.954 25.1009 49.1009C22.2478 46.2478 26.6957 37.174 35.0356 28.8341Z" stroke="black"/>
-                                <path d="M45.3677 28.8341C53.7076 37.174 58.1556 46.2478 55.3024 49.1009C52.4493 51.954 43.3755 47.5061 35.0356 39.1662C26.6957 30.8262 22.2478 21.7525 25.1009 18.8993C27.954 16.0462 37.0278 20.4941 45.3677 28.8341Z" stroke="black"/>
+                                <path d="M35.0356 28.8341C43.3755 20.4941 52.4493 16.0462 55.3024 18.8993C58.1556 21.7525 53.7076 30.8262 45.3677 39.1662C37.0278 47.5061 27.954 51.954 25.1009 49.1009C22.2478 46.2478 26.6957 37.174 35.0356 28.8341Z"
+                                      stroke="black"/>
+                                <path d="M45.3677 28.8341C53.7076 37.174 58.1556 46.2478 55.3024 49.1009C52.4493 51.954 43.3755 47.5061 35.0356 39.1662C26.6957 30.8262 22.2478 21.7525 25.1009 18.8993C27.954 16.0462 37.0278 20.4941 45.3677 28.8341Z"
+                                      stroke="black"/>
                             </svg>
                             <p>AI</p>
                         </div>
@@ -108,12 +111,13 @@
                         <img src="./img/main-bottom-img.svg" alt="">
                     </picture>
                 </div>
-                <a href="https://usemotion.com/meet/pasha-bergman/wkwk9v5?d=30" class="button" target="_blank">
+
+                <button type="button" class="button _js-btn-show-modal" data-modal="meeting">
                     <div class="button-wrapper">
                         <span>Book a call</span>
                         <span>Book a call</span>
                     </div>
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -152,6 +156,17 @@
     </div>
 </div>
 <div class="intro-overlay"></div>
+
+
+<div class="overlay-modal"></div>
+
+<div class="modal modal-meeting _js-modal js-modal-meeting">
+    <div class="modal-container">
+        <div class="modal-close _js-btn-close-modal"></div>
+
+        <iframe loading="lazy" src="https://calendly.com/pasha-bergman/intro-call?embed_type=PopupText&hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=ff5c5c"></iframe>
+    </div>
+</div>
 
 <script src="./js/components.js"></script>
 </body>
